@@ -19,6 +19,7 @@ RSpec.describe School, type: :model do
     expect(subject).to_not be_valid
   end
   it "CNPJ is unique" do
-    pending "add some examples to (or delete) #{__FILE__}"
+    school = School.new(name: "7 de Setembro", cnpj: "4104444/000144", active: true)
+    expect(school.cnpj).to_not eq(subject.cnpj)
   end
 end

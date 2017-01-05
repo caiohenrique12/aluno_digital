@@ -55,6 +55,8 @@ RSpec.describe Parent, type: :model do
     expect(subject.active).to be_truthy
   end
   it "CPF is unique" do
-    pending "add some examples to (or delete) #{__FILE__}"
+    parent = Parent.new(name: "Almeida Arantes", cpf: "544.444.444-44", age: "33", sex: 1, street: "Rua Teste", number: "304 A", neighborhood: "Meireles", city: "Fortaleza", state: "CE", phone_1: "(85) 9333333", phone_2: "(85) 3333333", active: true)
+
+    expect(parent.cpf).to_not eq(subject.cpf)
   end
 end

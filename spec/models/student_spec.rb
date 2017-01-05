@@ -31,6 +31,7 @@ RSpec.describe Student, type: :model do
     expect(subject.active).to be_truthy
   end
   it "Registration is unique" do
-    pending "add some examples to (or delete) #{__FILE__}"
+    student = Student.new(name: "João Pedro", age: 16, sex: 1, parent_id: 1, registration: 'B239P', active: true)
+    expect(student.registration).to_not eq(subject.registration)
   end
 end

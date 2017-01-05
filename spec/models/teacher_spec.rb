@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Teacher, type: :model do
   subject {
-    described_class.create!(name: "Priscila Almeida", sex: 2, phone_1: "566461", phone_2: "5564641" , registration: 'P339X', active: true)
+    described_class.new(name: "Priscila Almeida", sex: 2, phone_1: "566461", phone_2: "5564641" , registration: 'P339X', active: true)
   }
   it "Should be a valid" do
     expect(subject).to be_valid
@@ -31,6 +31,7 @@ RSpec.describe Teacher, type: :model do
     expect(subject.active).to be_truthy
   end
   it "Registration is unique" do
-    pending "add some examples to (or delete) #{__FILE__}"
+    teacher = Teacher.new(name: "Amanda Almeida", sex: 2, phone_1: "566461", phone_2: "5564641" , registration: 'Z339X', active: true)
+    expect(teacher.registration).to_not eq(subject.registration)
   end
 end
