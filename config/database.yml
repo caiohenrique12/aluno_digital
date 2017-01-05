@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  host: localhost
+  port: 5432
+  username: postgres
+  password: postgres
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+
+development:
+  <<: *default
+  database: aluno_digital_development
+test:
+  <<: *default
+  database: aluno_digital_test
+
+production:
+  <<: *default
+  database: aluno_digital_production
+  username: aluno_digital
+  password: <%= ENV['ALUNO_DIGITAL_DATABASE_PASSWORD'] %>
