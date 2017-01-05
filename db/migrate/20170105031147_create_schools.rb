@@ -2,7 +2,8 @@ class CreateSchools < ActiveRecord::Migration
   def change
     create_table :schools do |t|
       t.string :name
-      t.string :cnpj
+      t.string :cpnj
+      t.boolean :active
 
       t.timestamps null: false
     end

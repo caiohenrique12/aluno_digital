@@ -5,11 +5,13 @@ RSpec.describe "schools/index", type: :view do
     assign(:schools, [
       School.create!(
         :name => "Name",
-        :cnpj => "Cnpj"
+        :cpnj => "Cpnj",
+        :active => false
       ),
       School.create!(
         :name => "Name",
-        :cnpj => "Cnpj"
+        :cpnj => "Cpnj",
+        :active => false
       )
     ])
   end
@@ -17,6 +19,7 @@ RSpec.describe "schools/index", type: :view do
   it "renders a list of schools" do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
-    assert_select "tr>td", :text => "Cnpj".to_s, :count => 2
+    assert_select "tr>td", :text => "Cpnj".to_s, :count => 2
+    assert_select "tr>td", :text => false.to_s, :count => 2
   end
 end

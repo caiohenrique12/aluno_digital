@@ -1,7 +1,5 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe School do
-  it 'Verify School model exists' do
-    school = School.new
-  end
+RSpec.describe School, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

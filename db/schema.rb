@@ -11,16 +11,93 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105010429) do
+ActiveRecord::Schema.define(version: 20170105031712) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "schools", force: :cascade do |t|
+  create_table "classrooms", force: :cascade do |t|
     t.string   "name"
-    t.string   "cnpj"
+    t.integer  "turn"
+    t.integer  "unity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "classrooms", ["unity_id"], name: "index_classrooms_on_unity_id", using: :btree
+
+  create_table "parents", force: :cascade do |t|
+    t.string   "name"
+    t.string   "cpf"
+    t.string   "age"
+    t.integer  "sex"
+    t.string   "street"
+    t.string   "number"
+    t.string   "neighborhood"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone_1"
+    t.string   "phone_2"
+    t.boolean  "active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.string   "name"
+    t.string   "cpnj"
+    t.boolean  "active"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "name"
+    t.string   "age"
+    t.integer  "sex"
+    t.integer  "parent_id"
+    t.string   "registration"
+    t.boolean  "active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "students", ["parent_id"], name: "index_students_on_parent_id", using: :btree
+
+  create_table "teachers", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "sex"
+    t.string   "phone_1"
+    t.string   "phone_2"
+    t.string   "registration"
+    t.boolean  "active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "unities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "street"
+    t.string   "number"
+    t.string   "neighborhood"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone_1"
+    t.string   "phone_2"
+    t.integer  "school_id"
+    t.boolean  "active"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "unities", ["school_id"], name: "index_unities_on_school_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "classrooms", "unities"
+  add_foreign_key "students", "parents"
+  add_foreign_key "unities", "schools"
 end

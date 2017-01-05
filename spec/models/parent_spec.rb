@@ -1,7 +1,5 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe Parent do
-  it 'Verify Parent model exists' do
-    parent = Parent.new
-  end
+RSpec.describe Parent, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

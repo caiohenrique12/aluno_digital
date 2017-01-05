@@ -1,7 +1,5 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe Unity do
-  it 'Verify Unity model exists' do
-    unity = Unity.new
-  end
+RSpec.describe Unity, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end
