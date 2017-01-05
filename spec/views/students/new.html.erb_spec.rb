@@ -4,7 +4,7 @@ RSpec.describe "students/new", type: :view do
   before(:each) do
     assign(:student, Student.new(
       :name => "MyString",
-      :age => "MyString",
+      :age => 1,
       :sex => 1,
       :parent => nil,
       :registration => "MyString",

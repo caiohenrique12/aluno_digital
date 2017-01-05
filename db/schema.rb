@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170105031712) do
 
   create_table "schools", force: :cascade do |t|
     t.string   "name"
-    t.string   "cpnj"
+    t.string   "cnpj"
     t.boolean  "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20170105031712) do
 
   create_table "students", force: :cascade do |t|
     t.string   "name"
-    t.string   "age"
+    t.integer  "age"
     t.integer  "sex"
     t.integer  "parent_id"
     t.string   "registration"

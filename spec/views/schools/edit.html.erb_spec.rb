@@ -4,7 +4,7 @@ RSpec.describe "schools/edit", type: :view do
   before(:each) do
     @school = assign(:school, School.create!(
       :name => "MyString",
-      :cpnj => "MyString",
+      :cnpj => "MyString",
       :active => false
     ))
   end
@@ -16,7 +16,7 @@ RSpec.describe "schools/edit", type: :view do
 
       assert_select "input#school_name[name=?]", "school[name]"
 
-      assert_select "input#school_cpnj[name=?]", "school[cpnj]"
+      assert_select "input#school_cnpj[name=?]", "school[cnpj]"
 
       assert_select "input#school_active[name=?]", "school[active]"
     end
