@@ -1,5 +1,5 @@
 class Student < ActiveRecord::Base
-  belongs_to :parent
+  has_many :parents
 
   validates_presence_of :name, :age, :sex, :parent_id, :registration
   validates_uniqueness_of :registration

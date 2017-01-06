@@ -17,7 +17,7 @@
       <tr>
         <td><%= classroom.name %></td>
         <td><%= classroom.turn %></td>
-        <td><%= classroom.unity %></td>
+        <td><%= classroom.unity.name %></td>
         <td><%= link_to 'Show', classroom %></td>
         <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
         <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>

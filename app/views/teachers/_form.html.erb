@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :sex %><br>
-    <%= f.number_field :sex %>
+    <%= f.select :sex, Teacher.sexes.keys, prompt: 'Selecione' %>
   </div>
   <div class="field">
     <%= f.label :phone_1 %><br>
@@ -30,6 +30,15 @@
   <div class="field">
     <%= f.label :registration %><br>
     <%= f.text_field :registration %>
+  </div>
+  <div class="">
+    <span>Lista de Unidades</span><br>
+    <%= f.fields_for :works do |ff| %>
+      <%= ff.collection_check_boxes(:unity_ids, @unity, :id, :name) do |b| %>
+        <%= b.check_box %>
+        <%= b.label %>
+      <% end %>
+    <% end %>
   </div>
   <div class="field">
     <%= f.label :active %><br>
