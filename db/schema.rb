@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106111956) do
+ActiveRecord::Schema.define(version: 20170106130740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,14 +55,13 @@ ActiveRecord::Schema.define(version: 20170106111956) do
     t.string   "name"
     t.integer  "age"
     t.integer  "sex"
-    t.integer  "parent_id"
+    t.integer  "parent_one"
+    t.integer  "parent_two"
     t.string   "registration"
     t.boolean  "active"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
-
-  add_index "students", ["parent_id"], name: "index_students_on_parent_id", using: :btree
 
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
@@ -93,9 +92,22 @@ ActiveRecord::Schema.define(version: 20170106111956) do
   add_index "unities", ["school_id"], name: "index_unities_on_school_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet     "current_sign_in_ip"
+    t.inet     "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "works", force: :cascade do |t|
     t.integer  "teacher_id"
@@ -108,7 +120,6 @@ ActiveRecord::Schema.define(version: 20170106111956) do
   add_index "works", ["unity_id"], name: "index_works_on_unity_id", using: :btree
 
   add_foreign_key "classrooms", "unities"
-  add_foreign_key "students", "parents"
   add_foreign_key "unities", "schools"
   add_foreign_key "works", "teachers"
   add_foreign_key "works", "unities"

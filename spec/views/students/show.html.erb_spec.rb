@@ -5,8 +5,9 @@ RSpec.describe "students/show", type: :view do
     @student = assign(:student, Student.create!(
       :name => "Name",
       :age => 2,
-      :sex => 2,
-      :parent => nil,
+      :sex => 3,
+      :parent_one => 4,
+      :parent_two => 5,
       :registration => "Registration",
       :active => false
     ))
@@ -16,8 +17,9 @@ RSpec.describe "students/show", type: :view do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/2/)
-    expect(rendered).to match(/2/)
-    expect(rendered).to match(//)
+    expect(rendered).to match(/3/)
+    expect(rendered).to match(/4/)
+    expect(rendered).to match(/5/)
     expect(rendered).to match(/Registration/)
     expect(rendered).to match(/false/)
   end

@@ -1,0 +1,242 @@
+/*
+    LAYOUT PACTO V1.0
+    AUTOR: THIAGO SILVA
+    DATA: 04/10/2016
+
+    CSS
+*/
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/*ALL*/
+body {
+    background-color: #ffffff;
+}
+
+/*HEADER*/
+.header{
+    background-color: #AF1922;
+    color: #ffffff;
+}
+
+.header .f_logo{
+    padding:0px;
+}
+
+.header .f_logo a{
+    background-color: #ededec;
+    display: block;
+}
+
+.header .logo, header .container .perfil {
+    padding: 15px;
+}
+
+.header .perfil {
+    text-align: right;
+    padding: 15px 0px 15px 0px;
+}
+
+.header  .perfil a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.header .perfil a:hover {
+    color: #ffffff;
+}
+
+/*NAVBAR*/
+.sidebar{
+    padding-top: 15px;
+    background-color: #ededec;
+    margin-bottom: 120px;
+}
+
+.sidebar ul{
+    background-color: #AF1922;
+    padding:0px;
+    margin:0px;
+}
+
+.sidebar ul > li{
+    list-style: none;
+    border-bottom: #6a121d solid 1px;
+}
+
+.sidebar ul > li > a{
+    padding:8px;
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.sidebar ul > li > a .fa-chevron-right{
+    margin-top: 12px;
+    display: none;
+}
+
+.active .fa-inverse{
+    color: #6a121d;
+}
+
+.fa-inverse{
+    color: #AF1922;
+}
+
+.sidebar ul > li > a:hover{
+    background-color: #6a121d;
+}
+
+
+.sidebar ul > li > a:hover .fa-inverse{
+    color: #6a121d;
+}
+
+.sidebar ul > li.active  .fa-chevron-right{
+    display: block;
+}
+
+
+.sidebar ul > li.active{
+    background-color: #6a121d;
+}
+
+/*MAIN SITE*/
+.main{
+
+}
+
+.main-conteudo{
+    margin-top: 15px;
+}
+
+.main .s_menu{
+    padding:0px;
+}
+
+.main .logo{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.main-conteudo{
+    margin-bottom: 115px;
+}
+
+/*SIDES*/
+
+/*LOGIN*/
+.main-login {
+    max-width: 300px;
+}
+
+.main-login .panel {
+    border-bottom-width: 5px;
+}
+
+.main-login img {
+    margin-bottom: 15px;
+}
+
+.main-login small {
+    text-align: center;
+    display: block;
+    font-size: 10px;
+}
+
+.btn-success{
+    background-color: #af1922;
+    border-color:#6a121d;
+}
+
+.btn-success:hover{
+    background-color: #6a121d;
+    border-color:#6a121d;
+}
+
+.btn-success:active:hover,
+.btn-success.active:hover,
+.open > .dropdown-toggle.btn-success:hover,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.open > .dropdown-toggle.btn-success:focus,
+.btn-success:active.focus,
+.btn-success.active.focus,
+.open > .dropdown-toggle.btn-success.focus {
+    color: #6a121d;
+    background-color: #fff;
+    border-color: #6a121d;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+    color: #6a121d;
+    background-color: #fff;
+    border-color: #6a121d;
+}
+
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: none;
+    color: #337ab7;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover, .pagination > .active > span, .pagination > .active > span:focus, .pagination > .active > span:hover {
+    background-color: #AF1922;
+    color: #fff;
+    cursor: default;
+    z-index: 3;
+}
+
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: medium none;
+    color: #AF1922;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: medium none;
+    color: #AF1922;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+
+/*FOOTER*/
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #AF1922;
+    color: #FFF;
+}
+
+.footer small {
+    margin-top: 25px;
+}
+
+.footer img {
+    margin-top: 10px;
+}

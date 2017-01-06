@@ -6,7 +6,8 @@ RSpec.describe "students/edit", type: :view do
       :name => "MyString",
       :age => 1,
       :sex => 1,
-      :parent => nil,
+      :parent_one => 1,
+      :parent_two => 1,
       :registration => "MyString",
       :active => false
     ))
@@ -23,7 +24,9 @@ RSpec.describe "students/edit", type: :view do
 
       assert_select "input#student_sex[name=?]", "student[sex]"
 
-      assert_select "input#student_parent_id[name=?]", "student[parent_id]"
+      assert_select "input#student_parent_one[name=?]", "student[parent_one]"
+
+      assert_select "input#student_parent_two[name=?]", "student[parent_two]"
 
       assert_select "input#student_registration[name=?]", "student[registration]"
 

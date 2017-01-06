@@ -7,8 +7,102 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container-fluid header">
 
-<%= yield %>
+    <div class="row">
+      <div class="container">
+
+        <div class="pull-left col-sm-5 col-lg-3 col-xs-12 f_logo">
+          <!-- <a href=""><img src="lib/images/logo.png" class="img-responsive logo"/></a> -->
+        </div>
+
+        <div class="pull-right perfil">
+          <div><b>Thiago Silva</b> <i class="fa fa-user"></i></div>
+          <div><span><i class="fa fa-star"></i> Gestor Banco</span> / <span><i class="fa fa-bank"></i> Itau</span>
+          </div>
+          <div>
+            <a href="login.html"><i class="fa fa-sign-out"></i> Sair</a> /
+            <a href="conta.html" onclick="return false;" role="link"><i class="fa fa-gear"></i> Minha conta</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- MAIN CONTEUDO -->
+  <div class="container main">
+
+    <div class="col-lg-3 s_menu">
+
+      <div class="sidebar hidden-xs hidden-sm">
+          <ul>
+              <li class="active">
+                  <a href="/">
+                      <span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-home fa-stack-1x fa-inverse"></i>
+                      </span> Home <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+              <li data-url="">
+                  <a href="/schools/"><span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-bank fa-stack-1x fa-inverse"></i>
+                      </span> Escolas <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="/unities/"><span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-industry fa-stack-1x fa-inverse"></i>
+                      </span> Unidades <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="/classrooms/"><span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-puzzle-piece fa-stack-1x fa-inverse"></i>
+                      </span> Turmas <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="/teachers/"><span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-address-card-o fa-stack-1x fa-inverse"></i>
+                      </span> Professores <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="/parents/"><span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-users fa-stack-1x fa-inverse"></i>
+                      </span> Responsáveis <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="/students/"><span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                      </span> Alunos <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+              <li>
+                  <a href="login.html"><span class="fa-stack fa-lg" aria-hidden="true">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-sign-out fa-stack-1x fa-inverse"></i>
+                      </span> Sair <i class="fa fa-chevron-right pull-right"></i>
+                  </a>
+              </li>
+          </ul>
+
+      </div>
+    </div>
+    <div class="col-lg-9">
+      <div class="main-conteudo" id="main-conteudo">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

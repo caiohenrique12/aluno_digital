@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :sex %><br>
-    <%= f.number_field :sex %>
+    <%= f.select :sex, Parent.sexes.keys, prompt: 'Selecione' %>
   </div>
   <div class="field">
     <%= f.label :street %><br>

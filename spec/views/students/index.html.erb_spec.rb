@@ -6,16 +6,18 @@ RSpec.describe "students/index", type: :view do
       Student.create!(
         :name => "Name",
         :age => 2,
-        :sex => 2,
-        :parent => nil,
+        :sex => 3,
+        :parent_one => 4,
+        :parent_two => 5,
         :registration => "Registration",
         :active => false
       ),
       Student.create!(
         :name => "Name",
         :age => 2,
-        :sex => 2,
-        :parent => nil,
+        :sex => 3,
+        :parent_one => 4,
+        :parent_two => 5,
         :registration => "Registration",
         :active => false
       )
@@ -26,8 +28,9 @@ RSpec.describe "students/index", type: :view do
     render
     assert_select "tr>td", :text => "Name".to_s, :count => 2
     assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => 2.to_s, :count => 2
-    assert_select "tr>td", :text => nil.to_s, :count => 2
+    assert_select "tr>td", :text => 3.to_s, :count => 2
+    assert_select "tr>td", :text => 4.to_s, :count => 2
+    assert_select "tr>td", :text => 5.to_s, :count => 2
     assert_select "tr>td", :text => "Registration".to_s, :count => 2
     assert_select "tr>td", :text => false.to_s, :count => 2
   end

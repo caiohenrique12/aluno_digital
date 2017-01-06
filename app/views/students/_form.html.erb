@@ -21,11 +21,15 @@
   </div>
   <div class="field">
     <%= f.label :sex %><br>
-    <%= f.number_field :sex %>
+    <%= f.select :sex, Student.sexes.keys, prompt: 'Selecione' %>
   </div>
   <div class="field">
-    <%= f.label :parent_id %><br>
-    <%= f.text_field :parent_id %>
+    <%= f.label :parent_one %><br>
+    <%= f.select :parent_one, @parent.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_two %><br>
+    <%= f.select :parent_two, @parent.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
   </div>
   <div class="field">
     <%= f.label :registration %><br>

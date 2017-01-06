@@ -4,7 +4,8 @@ class CreateStudents < ActiveRecord::Migration
       t.string :name
       t.integer :age
       t.integer :sex
-      t.references :parent, index: true, foreign_key: true
+      t.integer :parent_one
+      t.integer :parent_two
       t.string :registration
       t.boolean :active
 
