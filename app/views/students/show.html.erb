@@ -1,39 +1,44 @@
 <p id="notice"><%= notice %></p>
+<div class="col-lg-5 pul-left">
+    <div class="row">
+        <h3 style="margin: 0px;"><i class="fa fa-bank" aria-hidden="true"></i> Dados</h3>
+    </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @student.name %>
-</p>
+<div class="clearfix"></div>
+<hr/>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>NOME</th>
+      <td><%= @student.name %></td>
+    </tr>
+    <tr>
+      <th>IDADE</th>
+      <td><%= @student.age %></td>
+    </tr>
+    <tr>
+      <th>SEXO</th>
+      <td><%= @student.sex %></td>
+    </tr>
+    <tr>
+      <th>RESPONSAVEL 1</th>
+      <td><%= @student.parent_one %></td>
+    </tr>
+    <tr>
+      <th>RESPONSAVEL 2</th>
+      <td><%= @student.parent_two %></td>
+    </tr>
+    <tr>
+      <th>MATRICULA</th>
+      <td><%= @student.registration %></td>
+    </tr>
+    <tr>
+      <th>ATIVO</th>
+      <td><%= @student.active %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Age:</strong>
-  <%= @student.age %>
-</p>
-
-<p>
-  <strong>Sex:</strong>
-  <%= @student.sex %>
-</p>
-
-<p>
-  <strong>Parent one:</strong>
-  <%= @student.parent_one %>
-</p>
-
-<p>
-  <strong>Parent two:</strong>
-  <%= @student.parent_two %>
-</p>
-
-<p>
-  <strong>Registration:</strong>
-  <%= @student.registration %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @student.active %>
-</p>
-
-<%= link_to 'Edit', edit_student_path(@student) %> |
-<%= link_to 'Back', students_path %>
+<%= link_to 'Editar', edit_student_path(@student), class: 'btn btn-success' %>
+<%= link_to 'Voltar', students_path, class: 'btn btn-info' %>

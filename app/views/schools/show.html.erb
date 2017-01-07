@@ -1,19 +1,37 @@
 <p id="notice"><%= notice %></p>
+<div class="col-lg-5 pul-left">
+    <div class="row">
+        <h3 style="margin: 0px;"><i class="fa fa-bank" aria-hidden="true"></i> Dados</h3>
+    </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @school.name %>
-</p>
+<div class="clearfix"></div>
+<hr/>
 
-<p>
-  <strong>CNPJ:</strong>
-  <%= @school.cnpj %>
-</p>
+<table class="table">
+    <tbody>
+    <tr>
+        <th>NOME</th>
+        <td><%= @school.name %></td>
+    </tr>
+    <tr>
+        <th>CNPJ</th>
+        <td>
+          <%= @school.cnpj %>
+        </td>
+    </tr>
+    <tr>
+        <th>SITUAÇÃO</th>
+        <td>
+          <% if @school.active %>
+            Ativo
+          <% else %>
+            Inativo
+          <% end %>
+        </td>
+    </tr>
+    </tbody>
+</table>
 
-<p>
-  <strong>Active:</strong>
-  <%= @school.active %>
-</p>
-
-<%= link_to 'Edit', edit_school_path(@school) %> |
-<%= link_to 'Back', schools_path %>
+<%= link_to 'Editar', edit_school_path(@school), class: 'btn btn-success' %>
+<%= link_to 'Voltar', schools_path, class: 'btn btn-info' %>

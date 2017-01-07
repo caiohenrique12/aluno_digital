@@ -1,14 +1,28 @@
 <p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li class=""><i class="fa fa-home" aria-hidden="true"></i> <a href="/">Home</a></li>
+  <li class=""><i class="fa fa-bank" aria-hidden="true"></i> Turmas</li>
+</ol>
 
-<h1>Listing Classrooms</h1>
+<div class="col-lg-4 pull-left">
+    <div class="row">
+      <h3 style="margin: 0px;"><i class="fa fa-list" aria-hidden="true"></i> Lista de Turmas</h3>
+    </div>
+</div>
+<div class="form-group pull-right">
+  <%= link_to 'Nova Turma', new_classroom_path, class: 'btn btn-success'  %>
+</div>
 
-<table>
+<div class="clearfix"></div>
+<hr/>
+
+<table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Turn</th>
-      <th>Unity</th>
-      <th colspan="3"></th>
+      <th>NOME</th>
+      <th>TURNO</th>
+      <th>UNIDADE</th>
+      <th colspan="3">AÇÕES</th>
     </tr>
   </thead>
 
@@ -18,14 +32,10 @@
         <td><%= classroom.name %></td>
         <td><%= classroom.turn %></td>
         <td><%= classroom.unity.name %></td>
-        <td><%= link_to 'Show', classroom %></td>
-        <td><%= link_to 'Edit', edit_classroom_path(classroom) %></td>
-        <td><%= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', classroom, class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_classroom_path(classroom), class: 'fa fa-pencil' %></td>
+        <td><%= link_to '', classroom, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Classroom', new_classroom_path %>

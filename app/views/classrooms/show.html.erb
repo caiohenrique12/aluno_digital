@@ -1,19 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="col-lg-5 pul-left">
+    <div class="row">
+        <h3 style="margin: 0px;"><i class="fa fa-bank" aria-hidden="true"></i> Dados</h3>
+    </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @classroom.name %>
-</p>
+<div class="clearfix"></div>
+<hr/>
 
-<p>
-  <strong>Turn:</strong>
-  <%= @classroom.turn %>
-</p>
+<table class="table">
+    <tbody>
+    <tr>
+        <th>NOME</th>
+        <td><%= @classroom.name %></td>
+    </tr>
+    <tr>
+        <th>TURNO</th>
+        <td><%= @classroom.turn %></td>
+    </tr>
+    <tr>
+        <th>UNIDADE</th>
+        <td><%= @classroom.unity.name %></td>
+    </tr>
+    </tbody>
+</table>
 
-<p>
-  <strong>Unity:</strong>
-  <%= @classroom.unity.name %>
-</p>
-
-<%= link_to 'Edit', edit_classroom_path(@classroom) %> |
-<%= link_to 'Back', classrooms_path %>
+<%= link_to 'Editar', edit_classroom_path(@classroom), class: 'btn btn-success' %>
+<%= link_to 'Voltar', classrooms_path, class: 'btn btn-info' %>

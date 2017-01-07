@@ -11,35 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.number_field :age %>
+  <div class="form-group">
+    <%= f.label :age, "Idade" %><br>
+    <%= f.number_field :age, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :sex %><br>
+  <div class="form-group">
+    <%= f.label :sex, "Sexo" %><br>
     <%= f.select :sex, Student.sexes.keys, prompt: 'Selecione' %>
   </div>
-  <div class="field">
-    <%= f.label :parent_one %><br>
+  <div class="form-group">
+    <%= f.label :parent_one, "Responsavel 1" %><br>
     <%= f.select :parent_one, @parent.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
   </div>
-  <div class="field">
-    <%= f.label :parent_two %><br>
+  <div class="form-group">
+    <%= f.label :parent_two, "Responsavel 2" %><br>
     <%= f.select :parent_two, @parent.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
   </div>
-  <div class="field">
-    <%= f.label :registration %><br>
-    <%= f.text_field :registration %>
+  <div class="form-group">
+    <%= f.label :registration, "Matricula" %><br>
+    <%= f.text_field :registration, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :active %><br>
+  <div class="form-group">
+    <%= f.label :active, "Ativo" %><br>
     <%= f.check_box :active %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-success' %>
+    <%= link_to 'Voltar', students_path, class: 'btn btn-info' %>
   </div>
 <% end %>

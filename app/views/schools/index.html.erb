@@ -23,7 +23,7 @@
       <th>NOME</th>
       <th>CNPJ</th>
       <th>ATIVO</th>
-      <th colspan="3"></th>
+      <th colspan="3">AÇÕES</th>
     </tr>
   </thead>
 
@@ -32,7 +32,13 @@
       <tr>
         <td><%= school.name %></td>
         <td><%= school.cnpj %></td>
-        <td><%= school.active %></td>
+        <td>
+          <% if school.active %>
+            Ativo
+          <% else %>
+            Inativo
+          <% end %>
+        </td>
         <td><%= link_to '', school, class: 'fa fa-eye' %></td>
         <td><%= link_to '', edit_school_path(school), class: 'fa fa-pencil' %></td>
         <td><%= link_to '', school, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash' %></td>

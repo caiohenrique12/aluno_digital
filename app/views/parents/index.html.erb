@@ -1,23 +1,32 @@
 <p id="notice"><%= notice %></p>
+<ol class="breadcrumb">
+  <li class=""><i class="fa fa-home" aria-hidden="true"></i> <a href="/">Home</a></li>
+  <li class=""><i class="fa fa-bank" aria-hidden="true"></i> Responsáveis</li>
+</ol>
 
-<h1>Listing Parents</h1>
+<div class="col-lg-4 pull-left">
+    <div class="row">
+        <h3 style="margin: 0px;"><i class="fa fa-list" aria-hidden="true"></i> Lista de Responsáveis</h3>
+    </div>
+</div>
+<div class="form-group pull-right">
+  <%= link_to 'Novo Responsável', new_parent_path, class: 'btn btn-success' %>
+</div>
 
-<table>
+<div class="clearfix"></div>
+<hr/>
+
+<div class="table-responsive">
+<table class="table table-hover table-striped">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Cpf</th>
-      <th>Age</th>
-      <th>Sex</th>
-      <th>Street</th>
-      <th>Number</th>
-      <th>Neighborhood</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Phone 1</th>
-      <th>Phone 2</th>
-      <th>Active</th>
-      <th colspan="3"></th>
+      <th>NOME</th>
+      <th>CPF</th>
+      <th>IDADE</th>
+      <th>SEXO</th>
+      <th>CELULAR</th>
+      <th>ATIVO</th>
+      <th colspan="3">AÇÕES</th>
     </tr>
   </thead>
 
@@ -28,13 +37,7 @@
         <td><%= parent.cpf %></td>
         <td><%= parent.age %></td>
         <td><%= parent.sex %></td>
-        <td><%= parent.street %></td>
-        <td><%= parent.number %></td>
-        <td><%= parent.neighborhood %></td>
-        <td><%= parent.city %></td>
-        <td><%= parent.state %></td>
         <td><%= parent.phone_1 %></td>
-        <td><%= parent.phone_2 %></td>
         <td><%= parent.active %></td>
         <td><%= link_to 'Show', parent %></td>
         <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
@@ -43,7 +46,4 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Parent', new_parent_path %>
+</div>

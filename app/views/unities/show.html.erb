@@ -1,54 +1,57 @@
 <p id="notice"><%= notice %></p>
+<div class="col-lg-5 pul-left">
+    <div class="row">
+        <h3 style="margin: 0px;"><i class="fa fa-bank" aria-hidden="true"></i> Dados</h3>
+    </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @unity.name %>
-</p>
+<div class="clearfix"></div>
+<hr/>
 
-<p>
-  <strong>Street:</strong>
-  <%= @unity.street %>
-</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>NOME</th>
+      <td><%= @unity.name %></td>
+    </tr>
+    <tr>
+      <th>RUA</th>
+      <td><%= @unity.street %></td>
+    </tr>
+    <tr>
+      <th>NÚMERO</th>
+      <td><%= @unity.number %></td>
+    </tr>
+    <tr>
+      <th>BAIRRO</th>
+      <td><%= @unity.neighborhood %></td>
+    </tr>
+    <tr>
+      <th>CIDADE</th>
+      <td><%= @unity.city %></td>
+    </tr>
+    <tr>
+      <th>ESTADO</th>
+      <td><%= @unity.state %></td>
+    </tr>
+    <tr>
+      <th>CELULAR</th>
+      <td><%= @unity.phone_1 %></td>
+    </tr>
+    <tr>
+      <th>TELEFONE FIXO</th>
+      <td><%= @unity.phone_2 %></td>
+    </tr>
+    <tr>
+      <th>ESCOLA</th>
+      <td><%= @unity.school.name %></td>
+    </tr>
+    <tr>
+      <th>ATIVO</th>
+      <td><%= @unity.active %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Number:</strong>
-  <%= @unity.number %>
-</p>
-
-<p>
-  <strong>Neighborhood:</strong>
-  <%= @unity.neighborhood %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @unity.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @unity.state %>
-</p>
-
-<p>
-  <strong>Phone 1:</strong>
-  <%= @unity.phone_1 %>
-</p>
-
-<p>
-  <strong>Phone 2:</strong>
-  <%= @unity.phone_2 %>
-</p>
-
-<p>
-  <strong>School:</strong>
-  <%= @unity.school.name %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @unity.active %>
-</p>
-
-<%= link_to 'Edit', edit_unity_path(@unity) %> |
-<%= link_to 'Back', unities_path %>
+<%= link_to 'Editar', edit_unity_path(@unity), class: 'btn btn-success' %>
+<%= link_to 'Voltar', unities_path, class: 'btn btn-info' %>

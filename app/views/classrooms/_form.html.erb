@@ -11,19 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :turn %><br>
-    <%= f.number_field :turn %>
+  <div class="form-group">
+    <%= f.label :turn, "Turno" %><br>
+    <%= f.select :turn, Classroom.turns.keys, prompt: 'Selecione', class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :unity_id %><br>
-    <%= f.text_field :unity_id %>
+  <div class="form-group">
+    <%= f.label :unity_id, "Unidade" %><br>
+    <%= f.select :unity_id, Unity.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'btn btn-success' %>
+    <%= link_to 'Voltar', classrooms_path, class: 'btn btn-info' %>
   </div>
 <% end %>

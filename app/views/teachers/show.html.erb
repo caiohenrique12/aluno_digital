@@ -1,34 +1,41 @@
 <p id="notice"><%= notice %></p>
+<div class="col-lg-5 pul-left">
+    <div class="row">
+        <h3 style="margin: 0px;"><i class="fa fa-bank" aria-hidden="true"></i> Dados</h3>
+    </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @teacher.name %>
-</p>
+<div class="clearfix"></div>
+<hr/>
 
-<p>
-  <strong>Sex:</strong>
-  <%= @teacher.sex %>
-</p>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>NOME</th>
+      <td><%= @teacher.name %></td>
+    </tr>
+    <tr>
+      <th>MATRICULA</th>
+      <td><%= @teacher.registration %></td>
+    </tr>
+    <tr>
+      <th>SEXO</th>
+      <td><%= @teacher.sex %></td>
+    </tr>
+    <tr>
+      <th>CELULAR</th>
+      <td><%= @teacher.phone_1 %></td>
+    </tr>
+    <tr>
+      <th>TELEFONE FIXO</th>
+      <td><%= @teacher.phone_2 %></td>
+    </tr>
+    <tr>
+      <th>ATIVO</th>
+      <td><%= @teacher.active %></td>
+    </tr>
+  </tbody>
+</table>
 
-<p>
-  <strong>Phone 1:</strong>
-  <%= @teacher.phone_1 %>
-</p>
-
-<p>
-  <strong>Phone 2:</strong>
-  <%= @teacher.phone_2 %>
-</p>
-
-<p>
-  <strong>Registration:</strong>
-  <%= @teacher.registration %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @teacher.active %>
-</p>
-
-<%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+<%= link_to 'Editar', edit_teacher_path(@teacher), class: 'btn btn-success' %>
+<%= link_to 'Voltar', teachers_path, class: 'btn btn-info' %>
