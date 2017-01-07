@@ -1,64 +1,71 @@
 <p id="notice"><%= notice %></p>
+<div class="col-lg-5 pul-left">
+    <div class="row">
+        <h3 style="margin: 0px;"><i class="fa fa-users" aria-hidden="true"></i> Dados</h3>
+    </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @parent.name %>
-</p>
-
-<p>
-  <strong>Cpf:</strong>
-  <%= @parent.cpf %>
-</p>
-
-<p>
-  <strong>Age:</strong>
-  <%= @parent.age %>
-</p>
-
-<p>
-  <strong>Sex:</strong>
-  <%= @parent.sex %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @parent.street %>
-</p>
-
-<p>
-  <strong>Number:</strong>
-  <%= @parent.number %>
-</p>
-
-<p>
-  <strong>Neighborhood:</strong>
-  <%= @parent.neighborhood %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @parent.city %>
-</p>
-
-<p>
-  <strong>State:</strong>
-  <%= @parent.state %>
-</p>
-
-<p>
-  <strong>Phone 1:</strong>
-  <%= @parent.phone_1 %>
-</p>
-
-<p>
-  <strong>Phone 2:</strong>
-  <%= @parent.phone_2 %>
-</p>
-
-<p>
-  <strong>Active:</strong>
-  <%= @parent.active %>
-</p>
-
-<%= link_to 'Edit', edit_parent_path(@parent) %> |
-<%= link_to 'Back', parents_path %>
+<div class="clearfix"></div>
+<hr/>
+<table class="table">
+  <tbody>
+    <tr>
+      <th>NOME</th>
+      <td><%= @parent.name %></td>
+    </tr>
+    <tr>
+      <th>CPF</th>
+      <td><%= @parent.cpf %></td>
+    </tr>
+    <tr>
+      <th>IDADE</th>
+      <td><%= @parent.age %></td>
+    </tr>
+    <tr>
+      <th>SEXO</th>
+      <td><%= @parent.sex %></td>
+    </tr>
+    <tr>
+      <th>Rua</th>
+      <td><%= @parent.street %></td>
+    </tr>
+    <tr>
+      <th>Número</th>
+      <td><%= @parent.number %></td>
+    </tr>
+    <tr>
+      <th>Bairro</th>
+      <td><%= @parent.neighborhood %></td>
+    </tr>
+    <tr>
+      <th>Cidade</th>
+      <td><%= @parent.city %></td>
+    </tr>
+    <tr>
+      <th>Estado</th>
+      <td><%= @parent.state %></td>
+    </tr>
+    <tr>
+      <th>Celular</th>
+      <td><%= @parent.phone_1 %></td>
+    </tr>
+    <tr>
+      <th>Telefone Fixo</th>
+      <td><%= @parent.phone_2 %></td>
+    </tr>
+    <tr>
+      <th>Ativo</th>
+      <td>
+        <% if @parent.active %>
+          Ativo
+        <% else %>
+          Inativo
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="form-group">
+  <%= link_to 'Editar', edit_parent_path(@parent), class: 'btn btn-success' %>
+  <%= link_to 'Voltar', parents_path, class: 'btn btn-info' %>
+</div>

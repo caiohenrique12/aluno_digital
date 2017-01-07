@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <ol class="breadcrumb">
   <li class=""><i class="fa fa-home" aria-hidden="true"></i> <a href="/">Home</a></li>
-  <li class=""><i class="fa fa-bank" aria-hidden="true"></i> Responsáveis</li>
+  <li class=""><i class="fa fa-users" aria-hidden="true"></i> Responsáveis</li>
 </ol>
 
 <div class="col-lg-4 pull-left">
@@ -39,9 +39,9 @@
         <td><%= parent.sex %></td>
         <td><%= parent.phone_1 %></td>
         <td><%= parent.active %></td>
-        <td><%= link_to 'Show', parent %></td>
-        <td><%= link_to 'Edit', edit_parent_path(parent) %></td>
-        <td><%= link_to 'Destroy', parent, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', parent, class: 'fa fa-eye' %></td>
+        <td><%= link_to '', edit_parent_path(parent), class: 'fa fa-pencil' %></td>
+        <td><%= link_to '', parent, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash' %></td>
       </tr>
     <% end %>
   </tbody>

@@ -11,56 +11,88 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="form-group">
+    <%= f.label :name, "Nome" %><br>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.text_field :cpf %>
+  <div class="col-md-4">
+    <div class="row">
+      <div class="form-group">
+        <%= f.label :cpf, "CPF" %><br>
+        <%= f.text_field :cpf, class: 'form-control' %>
+      </div>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :age %><br>
-    <%= f.text_field :age %>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label :age, "Idade" %><br>
+      <%= f.text_field :age, class: 'form-control' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :sex %><br>
-    <%= f.select :sex, Parent.sexes.keys, prompt: 'Selecione' %>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.label :sex, "Sexo" %><br>
+      <%= f.select :sex, Parent.sexes.keys, prompt: 'Selecione' %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :street %><br>
-    <%= f.text_field :street %>
-  </div>
-  <div class="field">
-    <%= f.label :number %><br>
-    <%= f.text_field :number %>
-  </div>
-  <div class="field">
-    <%= f.label :neighborhood %><br>
-    <%= f.text_field :neighborhood %>
-  </div>
-  <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
-  </div>
-  <div class="field">
-    <%= f.label :state %><br>
-    <%= f.text_field :state %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_1 %><br>
-    <%= f.text_field :phone_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_2 %><br>
-    <%= f.text_field :phone_2 %>
-  </div>
-  <div class="field">
-    <%= f.label :active %><br>
-    <%= f.check_box :active %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-    <%= link_to 'Back', parents_path %>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="form-group">
+            <%= f.label :street, "Rua" %><br>
+            <%= f.text_field :street, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :number, "Numero" %><br>
+          <%= f.text_field :number, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="row">
+          <div class="form-group">
+            <%= f.label :neighborhood, "Bairro" %><br>
+            <%= f.text_field :neighborhood, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :city, "Cidade" %><br>
+          <%= f.text_field :city, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-group">
+          <%= f.label :state, "Estado" %><br>
+          <%= f.text_field :state, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="row">
+          <div class="form-group">
+            <%= f.label :phone_1, "Celular" %><br>
+            <%= f.text_field :phone_1, class: 'form-control' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.label :phone_2, "Telefone Fixo" %><br>
+          <%= f.text_field :phone_2, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :active, "Ativo" %><br>
+        <%= f.check_box :active %>
+      </div>
+      <div class="form-group">
+        <%= f.submit class: 'btn btn-success' %>
+        <%= link_to 'Voltar', parents_path, class: 'btn btn-info' %>
+      </div>
+    </div>
   </div>
 <% end %>
