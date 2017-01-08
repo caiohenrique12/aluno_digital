@@ -1,5 +1,7 @@
 class Classroom < ActiveRecord::Base
   belongs_to :unity
+  has_many :studentclasses, class_name: 'StudentClass'
+  has_many :students, through: :studentclasses
 
   enum turn: { Manha: 1, Tarde: 2, Noite: 3 }
 

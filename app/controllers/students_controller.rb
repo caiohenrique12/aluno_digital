@@ -15,6 +15,9 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @student.studentclasses.build
+
+    @classrooms = Classroom.all
     @parent = Parent.all
   end
 
@@ -70,6 +73,7 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:name, :age, :sex, :parent_one, :parent_two, :registration, :active)
+      byebug
+      params.require(:student).permit(:name, :age, :sex, :registration, :active, studentclasses_attributes: [:student_id, :classroom_id])
     end
 end

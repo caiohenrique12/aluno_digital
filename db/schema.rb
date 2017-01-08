@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106130740) do
+ActiveRecord::Schema.define(version: 20170108150744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,12 +51,30 @@ ActiveRecord::Schema.define(version: 20170106130740) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "student_parents", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "student_parents", ["parent_id"], name: "index_student_parents_on_parent_id", using: :btree
+  add_index "student_parents", ["student_id"], name: "index_student_parents_on_student_id", using: :btree
+
+  create_table "student_unities", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "unity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "student_unities", ["student_id"], name: "index_student_unities_on_student_id", using: :btree
+  add_index "student_unities", ["unity_id"], name: "index_student_unities_on_unity_id", using: :btree
+
   create_table "students", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
     t.integer  "sex"
-    t.integer  "parent_one"
-    t.integer  "parent_two"
     t.string   "registration"
     t.boolean  "active"
     t.datetime "created_at",   null: false
@@ -120,6 +138,10 @@ ActiveRecord::Schema.define(version: 20170106130740) do
   add_index "works", ["unity_id"], name: "index_works_on_unity_id", using: :btree
 
   add_foreign_key "classrooms", "unities"
+  add_foreign_key "student_parents", "parents"
+  add_foreign_key "student_parents", "students"
+  add_foreign_key "student_unities", "students"
+  add_foreign_key "student_unities", "unities"
   add_foreign_key "unities", "schools"
   add_foreign_key "works", "teachers"
   add_foreign_key "works", "unities"

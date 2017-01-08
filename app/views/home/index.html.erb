@@ -1,6 +1,26 @@
 <ol class="breadcrumb">
-  <li class=""><i class="fa fa-tachometer" aria-hidden="true"></i> <a href="./">Home</a></li>
-  <li class=""><i class="fa fa-bank" aria-hidden="true"></i> Bancos</li>
-  <li class=""><i class="fa fa-book is-active" aria-hidden="true"></i> <span class="is-active">Novo Banco</span>
+  <li class=""><i class="fa fa-tachometer" aria-hidden="true"></i> <a href="./"> Dashboard</a></li>
   </li>
 </ol>
+<table class="table">
+  <thead>
+    <tr>
+      <th>UNIDADE</th>
+      <th>TURMAS</th>
+      <th>PROFESSORES</th>
+      <th>ALUNOS</th>
+      <th>RESPONSAVEIS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.unidade %></td>
+      <td><%= school.turmas %></td>
+      <td><%= school.professores %></td>
+      <td><%= school.alunos %></td>
+      <td><%= school.responsaveis %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

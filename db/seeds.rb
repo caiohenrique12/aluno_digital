@@ -7,6 +7,16 @@ Unity.create(name: 'Unidade Baby', street: 'Rua Teste 2', number: '200', neighbo
 Unity.create(name: 'Unidade Sul', street: 'Rua Teste 3', number: '300', neighborhood: 'Teste 3', city: 'Fortaleza', state: 'CE', phone_1: '36665448', phone_2: '01949849', school_id: 1, active: true)
 Unity.create(name: 'Principal', street: 'Rua Teste 4', number: '4100', neighborhood: 'Teste 4', city: 'Fortaleza', phone_1: '36665448', phone_2: '01949849', state: 'CE', school_id: 1, active: true)
 
+Teacher.create(name: 'Alan Wendel', registration: 'BASD23', sex: 1, phone_1: '85 5555555', phone_2: '85 333333', active: true)
+Teacher.create(name: 'Marcelo Silva', registration: 'BASD03', sex: 1, phone_1: '85 7555555', phone_2: '85 323333', active: true)
+Teacher.create(name: 'Andrea Morais', registration: 'BASF21', sex: 2, phone_1: '85 8555555', phone_2: '85 343333', active: true)
+
+Work.create(teacher_id: 1, unity_id: 1)
+Work.create(teacher_id: 1, unity_id: 2)
+Work.create(teacher_id: 2, unity_id: 3)
+Work.create(teacher_id: 2, unity_id: 4)
+Work.create(teacher_id: 3, unity_id: 1)
+
 Classroom.create(name: '1 ano A', turn: 1, unity_id: 1)
 Classroom.create(name: '1 ano B', turn: 1, unity_id: 1)
 Classroom.create(name: '1 ano C', turn: 1, unity_id: 1)
@@ -32,3 +42,24 @@ Parent.create(name: 'Pedro Paulo', cpf: '355.543.177-121', age: 40, sex: 1, stre
 Parent.create(name: 'Junior Silva', cpf: '155.144.174-111', age: 25, sex: 1, street: 'Rua teste 2', number: '58', neighborhood: 'Teste', city: 'Fortaleza', state: 'CE', phone_1: '85 999999', phone_2: '85 94444444', active: true)
 Parent.create(name: 'Bruna Silva', cpf: '055.044.077-051', age: 29, sex: 2, street: 'Rua teste 3', number: '48', neighborhood: 'Teste', city: 'Fortaleza', state: 'CE', phone_1: '85 5665656', phone_2: '85 33333331', active: true)
 Parent.create(name: 'Ricardo Maia', cpf: '255.244.277-251', age: 50, sex: 1, street: 'Rua teste 2', number: '411', neighborhood: 'Teste', city: 'Fortaleza', state: 'CE', phone_1: '85 3213131', phone_2: '85 113213213', active: true)
+
+Student.create(name: 'Erik Gonçalves', age: 13, sex: 1, registration: 'A3615', active: true)
+Student.create(name: 'Marcos Aurelio', age: 11, sex: 1, registration: 'A3605', active: true)
+Student.create(name: 'Bruna Almeida', age: 13, sex: 2, registration: 'A3601', active: true)
+Student.create(name: 'Erika Lima', age: 13, sex: 2, registration: 'A3602', active: true)
+Student.create(name: 'Andersson Lima', age: 13, sex: 1, registration: 'A3607', active: true)
+
+StudentUnity.create(unity_id: 1, student_id: 1)
+StudentUnity.create(unity_id: 3, student_id: 1)
+StudentUnity.create(unity_id: 1, student_id: 2)
+StudentUnity.create(unity_id: 1, student_id: 3)
+StudentUnity.create(unity_id: 1, student_id: 4)
+StudentUnity.create(unity_id: 1, student_id: 5)
+StudentUnity.create(unity_id: 2, student_id: 5)
+StudentUnity.create(unity_id: 3, student_id: 2)
+
+StudentParent.create(student_id: 1, parent_id: 1)
+StudentParent.create(student_id: 1, parent_id: 2)
+StudentParent.create(student_id: 2, parent_id: 3)
+StudentParent.create(student_id: 4, parent_id: 4)
+StudentParent.create(student_id: 5, parent_id: 4)

@@ -40,9 +40,9 @@
   <div class="form-group">
     <span><b>Lista de Unidades</b></span><br>
     <%= f.fields_for :works do |ff| %>
-      <%= ff.collection_check_boxes(:unity_ids, @unity, :id, :name) do |b| %>
-        <%= b.check_box %>
-        <%= b.label %>
+      <% @unity.each do |u| %>
+        <input type="checkbox" name="teacher[works][unity_id]" value="<%= u.id %>">
+        <%= u.name %>
       <% end %>
     <% end %>
   </div>

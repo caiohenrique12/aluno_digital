@@ -1,6 +1,6 @@
 class Teacher < ActiveRecord::Base
 
-  has_many :works
+  has_many :works, class_name: 'Work'
   has_many :unities, through: :works
 
   validates_presence_of :name, :sex, :phone_1, :phone_2, :registration

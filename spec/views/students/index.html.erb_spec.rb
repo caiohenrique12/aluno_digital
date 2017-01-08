@@ -7,8 +7,6 @@ RSpec.describe "students/index", type: :view do
         :name => "Name",
         :age => 2,
         :sex => 3,
-        :parent_one => 4,
-        :parent_two => 5,
         :registration => "Registration",
         :active => false
       ),
@@ -16,8 +14,6 @@ RSpec.describe "students/index", type: :view do
         :name => "Name",
         :age => 2,
         :sex => 3,
-        :parent_one => 4,
-        :parent_two => 5,
         :registration => "Registration",
         :active => false
       )

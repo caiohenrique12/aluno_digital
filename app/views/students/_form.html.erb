@@ -24,16 +24,17 @@
     <%= f.select :sex, Student.sexes.keys, prompt: 'Selecione' %>
   </div>
   <div class="form-group">
-    <%= f.label :parent_one, "Responsavel 1" %><br>
-    <%= f.select :parent_one, @parent.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
-  </div>
-  <div class="form-group">
-    <%= f.label :parent_two, "Responsavel 2" %><br>
-    <%= f.select :parent_two, @parent.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
-  </div>
-  <div class="form-group">
     <%= f.label :registration, "Matricula" %><br>
     <%= f.text_field :registration, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label>Turmas</label><br>
+    <%= f.fields_for :studentclasses do |s| %>
+      <% @classrooms.each do |c| %>
+        <input type="checkbox" name="student[studentclasses][classroom_id]" value="<%= c.id %>">
+        <%= c.name %>
+      <% end %>
+    <% end %>
   </div>
   <div class="form-group">
     <%= f.label :active, "Ativo" %><br>
