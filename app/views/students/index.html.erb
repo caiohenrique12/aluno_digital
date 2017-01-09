@@ -35,7 +35,13 @@
         <td><%= student.age %></td>
         <td><%= student.sex %></td>
         <td><%= student.registration %></td>
-        <td><%= student.active %></td>
+        <td>
+          <% if student.active %>
+            Ativo
+          <% else %>
+            Inativo
+          <% end %>
+        </td>
         <td><%= link_to '', student, class: 'fa fa-eye'  %></td>
         <td><%= link_to '', edit_student_path(student), class: 'fa fa-pencil' %></td>
         <td><%= link_to '', student, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash' %></td>
@@ -43,3 +49,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @students %>

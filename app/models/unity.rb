@@ -6,5 +6,7 @@ class Unity < ActiveRecord::Base
   has_many :student_unities, class_name: 'StudentUnity'
   has_many :students, through: :student_unities
 
+  paginates_per 5
+
   validates_presence_of :name, :street, :number, :neighborhood, :city, :state, :phone_1, :phone_2, :school_id
 end

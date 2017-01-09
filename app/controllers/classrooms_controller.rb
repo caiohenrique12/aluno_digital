@@ -4,7 +4,7 @@ class ClassroomsController < ApplicationController
   # GET /classrooms
   # GET /classrooms.json
   def index
-    @classrooms = Classroom.all
+    @classrooms = Classroom.all.page params[:page]
   end
 
   # GET /classrooms/1

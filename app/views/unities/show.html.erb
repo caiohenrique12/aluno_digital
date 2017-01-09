@@ -48,7 +48,13 @@
     </tr>
     <tr>
       <th>ATIVO</th>
-      <td><%= @unity.active %></td>
+      <td>
+        <% if @unity.active %>
+          Ativo
+        <% else %>
+          Inativo
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>

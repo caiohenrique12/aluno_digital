@@ -1,6 +1,8 @@
 class School < ActiveRecord::Base
   has_many :unities
 
+  paginates_per 5
+
   validates_presence_of :name, :cnpj
   validates_uniqueness_of :cnpj
 

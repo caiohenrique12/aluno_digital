@@ -38,7 +38,13 @@
         <td><%= parent.age %></td>
         <td><%= parent.sex %></td>
         <td><%= parent.phone_1 %></td>
-        <td><%= parent.active %></td>
+        <td>
+          <% if parent.active %>
+            Ativo
+          <% else %>
+            Inativo
+          <% end %>
+        </td>
         <td><%= link_to '', parent, class: 'fa fa-eye' %></td>
         <td><%= link_to '', edit_parent_path(parent), class: 'fa fa-pencil' %></td>
         <td><%= link_to '', parent, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash' %></td>
@@ -47,3 +53,4 @@
   </tbody>
 </table>
 </div>
+<%= paginate @parents %>

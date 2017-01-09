@@ -4,7 +4,7 @@ class UnitiesController < ApplicationController
   # GET /unities
   # GET /unities.json
   def index
-    @unities = Unity.all
+    @unities = Unity.all.page params[:page]
   end
 
   # GET /unities/1

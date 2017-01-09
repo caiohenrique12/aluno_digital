@@ -37,7 +37,13 @@
         <td><%= teacher.phone_1 %></td>
         <td><%= teacher.phone_2 %></td>
         <td><%= teacher.registration %></td>
-        <td><%= teacher.active %></td>
+        <td>
+          <% if teacher.active %>
+            Ativo
+          <% else %>
+            Inativo
+          <% end %>
+        </td>
         <td><%= link_to '', teacher, class: 'fa fa-eye' %></td>
         <td><%= link_to '', edit_teacher_path(teacher), class: 'fa fa-pencil' %></td>
         <td><%= link_to '', teacher, method: :delete, data: { confirm: 'Are you sure?' }, class: 'fa fa-trash' %></td>
@@ -45,3 +51,4 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @teachers %>

@@ -4,7 +4,7 @@ class ParentsController < ApplicationController
   # GET /parents
   # GET /parents.json
   def index
-    @parents = Parent.all
+    @parents = Parent.all.page params[:page]
   end
 
   # GET /parents/1

@@ -27,7 +27,13 @@
     </tr>
     <tr>
       <th>ATIVO</th>
-      <td><%= @student.active %></td>
+      <td>
+        <% if @student.active %>
+          Ativo
+        <% else %>
+          Inativo
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>
