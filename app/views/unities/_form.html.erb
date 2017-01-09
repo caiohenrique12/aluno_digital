@@ -15,7 +15,7 @@
       <div class="form-group col-md-12">
         <div class="row">
           <%= f.label :school_id, "Escola" %><br>
-          <%= f.select :school_id, School.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
+          <%= f.select :school_id, School.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Por Favor Selecione'}, {class: 'form-control', required: true} %>
         </div>
       </div>
 
@@ -58,13 +58,13 @@
       <div class="form-group col-md-6">
         <div class="row">
           <%= f.label :phone_1, "Celular" %>
-          <%= f.text_field :phone_1, class: 'form-control' %>
+          <%= f.text_field :phone_1, class: 'form-control phone_with_ddd' %>
         </div>
       </div>
 
       <div class="form-group col-md-6">
         <%= f.label :phone_2, "Telefone Fixo" %>
-        <%= f.text_field :phone_2, class: 'form-control' %>
+        <%= f.text_field :phone_2, class: 'form-control phone' %>
       </div>
 
       <div class="form-group col-md-6">

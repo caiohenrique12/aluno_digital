@@ -15,7 +15,7 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
-    @student.studentclasses.build
+    @student.student_unities.build
 
     @classrooms = Classroom.all
     @parent = Parent.all

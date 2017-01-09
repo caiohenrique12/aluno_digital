@@ -17,11 +17,11 @@
   </div>
   <div class="form-group">
     <%= f.label :turn, "Turno" %><br>
-    <%= f.select :turn, Classroom.turns.keys, prompt: 'Selecione', class: 'form-control' %>
+    <%= f.select :turn, Classroom.turns.keys, {prompt: 'Por Favor Selecione'}, {class: 'form-control', required: true} %>
   </div>
   <div class="form-group">
     <%= f.label :unity_id, "Unidade" %><br>
-    <%= f.select :unity_id, Unity.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Selecione'} %>
+    <%= f.select :unity_id, Unity.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Por Favor Selecione'}, {class: 'form-control', required: true} %>
   </div>
   <div class="actions">
     <%= f.submit class: 'btn btn-success' %>

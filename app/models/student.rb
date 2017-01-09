@@ -1,7 +1,7 @@
 class Student < ActiveRecord::Base
   has_many :parents
-  has_many :studentclasses, class_name: 'StudentClass'
-  has_many :classrooms, through: :studentclasses
+  has_many :student_unities, class_name: 'StudentUnity'
+  has_many :unities, through: :student_unities
 
   validates_presence_of :name, :age, :sex, :registration
   validates_uniqueness_of :registration

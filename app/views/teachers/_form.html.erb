@@ -21,20 +21,20 @@
   </div>
   <div class="form-group">
     <%= f.label :sex, "Sexo" %><br>
-    <%= f.select :sex, Teacher.sexes.keys, prompt: 'Selecione' %>
+    <%= f.select :sex, Teacher.sexes.keys, {prompt: 'Por Favor Selecione'}, {class: 'form-control', required: true} %>
   </div>
   <div class="col-md-6">
     <div class="row">
       <div class="form-group">
         <%= f.label :phone_1, "Celular" %><br>
-        <%= f.text_field :phone_1, class: 'form-control' %>
+        <%= f.text_field :phone_1, class: 'form-control phone_with_ddd' %>
       </div>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-group">
       <%= f.label :phone_2, "Telefone Fixo" %><br>
-      <%= f.text_field :phone_2, class: 'form-control' %>
+      <%= f.text_field :phone_2, class: 'form-control phone' %>
     </div>
   </div>
   <div class="form-group">
