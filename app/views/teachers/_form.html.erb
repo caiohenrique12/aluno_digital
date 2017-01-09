@@ -38,15 +38,6 @@
     </div>
   </div>
   <div class="form-group">
-    <span><b>Lista de Unidades</b></span><br>
-    <%= f.fields_for :works do |ff| %>
-      <% @unity.each do |u| %>
-        <input type="checkbox" name="teacher[works][unity_id]" value="<%= u.id %>">
-        <%= u.name %>
-      <% end %>
-    <% end %>
-  </div>
-  <div class="form-group">
     <%= f.label :active, "Ativo" %><br>
     <%= f.check_box :active %>
   </div>

@@ -15,9 +15,6 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   def new
     @teacher = Teacher.new
-    @teacher.works.build
-
-    @unity = Unity.all
   end
 
   # GET /teachers/1/edit
@@ -72,7 +69,6 @@ class TeachersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def teacher_params
-      byebug
       params.require(:teacher).permit(:name, :sex, :phone_1, :phone_2, :registration, :active, works_attributes: [:teacher_id, :unity_id])
     end
 end
